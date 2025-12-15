@@ -1,8 +1,494 @@
-#root {
-  max-width: 1280px;
+/* 應用容器 */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #f5f7fa;
+}
+
+/* 主內容區域 */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 電腦版為固定側邊欄留出空間 */
+@media (min-width: 769px) {
+  .main-content {
+    margin-left: 240px;
+  }
+
+  .content-header {
+    display: none;
+  }
+}
+
+/* 內容頭部 */
+.content-header {
+  background: white;
+  padding: 30px;
+  border-bottom: 1px solid #e1e5e9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.content-header h1 {
+  margin: 0 0 10px 0;
+  color: #2c3e50;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.content-header p {
+  margin: 0;
+  color: #7f8c8d;
+  font-size: 16px;
+}
+
+/* 內容主體 */
+.content-body {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+}
+
+/* 內容區域 */
+.content-section {
+  margin-bottom: 40px;
+}
+
+.content-section:last-child {
+  margin-bottom: 0;
+}
+
+.content-card {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  margin-bottom: 30px;
+}
+
+.content-card h2 {
+  color: #2c3e50;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 30px 0;
+  border-bottom: 3px solid #f4e4bc;
+  padding-bottom: 15px;
+}
+
+/* About Section */
+.about-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.about-text p {
+  color: #5a6c7d;
+  line-height: 1.8;
+  margin: 0 0 20px 0;
+  font-size: 16px;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.stat-item {
   text-align: center;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #f4e4bc;
+}
+
+.stat-number {
+  font-size: 36px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+/* Skills Section */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.skill-category h3 {
+  color: #2c3e50;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tag {
+  background: #f4e4bc;
+  color: #2c3e50;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid rgba(44, 62, 80, 0.1);
+}
+
+/* Projects Section */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 25px;
+  border: 1px solid #e9ecef;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.project-header {
+  margin-bottom: 15px;
+}
+
+.project-header h3 {
+  color: #2c3e50;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.tech-tag {
+  background: #f4e4bc;
+  color: #2c3e50;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.project-card p {
+  color: #5a6c7d;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+}
+
+.project-links {
+  display: flex;
+  gap: 15px;
+}
+
+.project-link {
+  color: #2c3e50;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 16px;
+  border: 1px solid #2c3e50;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.project-link:hover {
+  background: #2c3e50;
+  color: white;
+}
+
+/* Experiences Section */
+.experiences-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.experience-item {
+  border-left: 4px solid #f4e4bc;
+  padding-left: 25px;
+  position: relative;
+}
+
+.experience-item::before {
+  content: '';
+  position: absolute;
+  left: -12px;
+  top: 8px;
+  width: 20px;
+  height: 20px;
+  background: #f4e4bc;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 0 0 3px #f4e4bc;
+}
+
+.experience-header {
+  margin-bottom: 15px;
+}
+
+.experience-header h3 {
+  color: #2c3e50;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 5px 0;
+}
+
+.experience-company {
+  color: #f1c40f;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.experience-date {
+  color: #7f8c8d;
+  font-size: 14px;
+  float: right;
+}
+
+.experience-item ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.experience-item li {
+  color: #5a6c7d;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+/* Educations Section */
+.educations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.education-item {
+  border-left: 4px solid #f4e4bc;
+  padding-left: 25px;
+  position: relative;
+}
+
+.education-item::before {
+  content: '';
+  position: absolute;
+  left: -12px;
+  top: 8px;
+  width: 20px;
+  height: 20px;
+  background: #f4e4bc;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 0 0 3px #f4e4bc;
+}
+
+.education-header {
+  margin-bottom: 15px;
+}
+
+.education-header h3 {
+  color: #2c3e50;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 5px 0;
+}
+
+.education-school {
+  color: #f1c40f;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.education-date {
+  color: #7f8c8d;
+  font-size: 14px;
+  float: right;
+}
+
+.education-item p {
+  color: #5a6c7d;
+  line-height: 1.6;
+  margin: 0 0 15px 0;
+}
+
+.education-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.highlight-tag {
+  background: #f4e4bc;
+  color: #2c3e50;
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid rgba(44, 62, 80, 0.1);
+}
+
+/* 歡迎卡片 */
+.welcome-card {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.welcome-card h2 {
+  color: #2c3e50;
+  margin: 0 0 15px 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.welcome-card p {
+  color: #5a6c7d;
+  margin: 0 0 25px 0;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* 演示區域 */
+.demo-section {
+  margin-top: 30px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+.demo-section h3 {
+  margin: 0 0 15px 0;
+  color: #2c3e50;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.demo-section button {
+  background: #f4e4bc;
+  color: #2c3e50;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(44, 62, 80, 0.2);
+}
+
+.demo-section button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(44, 62, 80, 0.3);
+}
+
+.demo-section button:active {
+  transform: translateY(0);
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  .app-container {
+    position: relative;
+  }
+
+  .side-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+  }
+
+  .content-header {
+    display: none;
+  }
+
+  .content-body {
+    padding: 20px;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+  }
+
+  .welcome-card {
+    padding: 20px;
+  }
+
+  .content-card {
+    padding: 25px;
+  }
+
+  .content-card h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .experience-date,
+  .education-date {
+    float: none;
+    display: block;
+    margin-top: 5px;
+  }
+
+  .education-highlights {
+    justify-content: center;
+  }
+
+  /* 第一個content-section額外增加60px頂部距離 */
+  .content-section:first-child {
+    margin-top: 60px;
+  }
 }
 
 .logo {

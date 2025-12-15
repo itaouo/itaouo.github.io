@@ -2,6 +2,18 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
+## Environment Variables
+
+Create a `.env.local` file in the root directory and add your social media links:
+
+```env
+VITE_GITHUB_URL=https://github.com/yourusername
+VITE_LINKEDIN_URL=https://linkedin.com/in/yourprofile
+VITE_EMAIL=your.email@example.com
+```
+
+Alternatively, you can edit the URLs directly in `src/config.js`.
+
 Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh

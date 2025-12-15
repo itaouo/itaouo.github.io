@@ -1,0 +1,384 @@
+/* 側邊菜單樣式 */
+.side-menu {
+  width: 240px;
+  height: 100vh;
+  background: #f4e4bc;
+  color: #2c3e50;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+/* 電腦版固定定位 */
+@media (min-width: 769px) {
+  .side-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+}
+
+.side-menu.collapsed {
+  width: 70px;
+}
+
+/* 手機板頂部導航欄 */
+.mobile-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: #f4e4bc;
+  border-bottom: 1px solid rgba(44, 62, 80, 0.2);
+  display: none;
+  z-index: 999;
+  transition: transform 0.3s ease;
+}
+
+.mobile-navbar.navbar-visible {
+  transform: translateY(0);
+}
+
+.mobile-navbar.navbar-hidden {
+  transform: translateY(-100%);
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 100%;
+}
+
+.navbar-menu-btn {
+  background: rgba(44, 62, 80, 0.1);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: all 0.2s ease;
+  color: #2c3e50;
+  outline: none;
+}
+
+.navbar-menu-btn:hover {
+  background: rgba(44, 62, 80, 0.2);
+  transform: scale(1.05);
+}
+
+.navbar-menu-btn svg {
+  color: #2c3e50;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  display: block;
+}
+
+.navbar-user-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+/* 手機板顯示導航欄 */
+@media (max-width: 768px) {
+  .mobile-navbar {
+    display: block;
+  }
+}
+
+/* 手機板菜單按鈕 */
+.mobile-menu-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(44, 62, 80, 0.1);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: all 0.2s ease;
+  color: #2c3e50;
+  outline: none;
+  z-index: 1001;
+}
+
+.mobile-menu-btn:hover {
+  background: rgba(44, 62, 80, 0.2);
+  transform: scale(1.05);
+}
+
+.mobile-menu-btn svg {
+  color: #2c3e50;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  display: block;
+}
+
+/* 手機板顯示菜單按鈕 */
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  .menu-button {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/* 手機板菜單狀態 */
+.side-menu.mobile-closed {
+  transform: translateY(-100%);
+}
+
+.side-menu.mobile-open {
+  transform: translateY(0);
+}
+
+/* 用戶個人資料區域 */
+.user-profile {
+  padding: 15px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  flex: 0 0 auto;
+}
+
+.profile-avatar {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-info {
+  width: 100%;
+}
+
+.profile-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+
+.social-links {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.social-btn {
+  background: rgba(44, 62, 80, 0.1);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  color: #2c3e50;
+  outline: none;
+}
+
+.social-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.social-btn:focus {
+  outline: none;
+}
+
+.social-btn svg {
+  color: #2c3e50;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  display: block;
+}
+
+/* 收起狀態下的個人資料樣式 */
+.side-menu.collapsed .user-profile {
+  padding: 10px 10px;
+}
+
+.side-menu.collapsed .profile-avatar {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 0;
+}
+
+.side-menu.collapsed .profile-info {
+  display: none;
+}
+
+/* 菜單導航 */
+.menu-nav {
+  flex: 1;
+  padding: 10px 0 20px 0;
+  overflow-y: auto;
+  max-height: calc(100vh - 240px); /* 留出個人資料和底部區域的空間 */
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  margin-bottom: 4px;
+}
+
+.menu-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 20px;
+  background: none;
+  border: none;
+  color: rgba(44, 62, 80, 0.8);
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 0;
+  text-align: left;
+  position: relative;
+  outline: none;
+}
+
+.menu-button:hover {
+  background: rgba(44, 62, 80, 0.1);
+  color: #2c3e50;
+}
+
+.menu-button.active {
+  background: rgba(44, 62, 80, 0.15);
+  color: #2c3e50;
+}
+
+.menu-button:focus {
+  outline: none;
+}
+
+.menu-icon {
+  font-size: 20px;
+  min-width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 收起狀態下的樣式 */
+.side-menu.collapsed .menu-button {
+  justify-content: center;
+  padding: 14px 12px;
+}
+
+.side-menu.collapsed .menu-label {
+  display: none;
+}
+
+/* 菜單底部 */
+.menu-footer {
+  padding: 5px;
+  border-top: 1px solid rgba(44, 62, 80, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40px;
+}
+
+.copyright-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 5px;
+}
+
+.copyright-text {
+  font-size: 12px;
+  color: rgba(44, 62, 80, 0.8);
+  font-weight: 500;
+}
+
+.copyright-subtext {
+  font-size: 10px;
+  color: rgba(44, 62, 80, 0.6);
+  font-weight: 400;
+}
+
+/* 收起狀態下的底部樣式 */
+.side-menu.collapsed .menu-footer {
+  justify-content: center;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  .side-menu {
+    width: 200px; /* 在小螢幕上稍微縮窄 */
+  }
+}
+
+/* 滾動條樣式 */
+.menu-nav::-webkit-scrollbar {
+  width: 4px;
+}
+
+.menu-nav::-webkit-scrollbar-track {
+  background: rgba(44, 62, 80, 0.1);
+}
+
+.menu-nav::-webkit-scrollbar-thumb {
+  background: rgba(44, 62, 80, 0.3);
+  border-radius: 2px;
+}
+
+.menu-nav::-webkit-scrollbar-thumb:hover {
+  background: rgba(44, 62, 80, 0.5);
+}

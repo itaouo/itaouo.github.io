@@ -1,34 +1,59 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import SideMenu from './components/SideMenu'
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="app-container">
+      <SideMenu />
+      <main className="main-content">
+        <header className="content-header">
+          <h1>RITA 管理系統</h1>
+          <p>歡迎使用管理後台</p>
+        </header>
+
+        <div className="content-body">
+          {/* About Me Section */}
+          <section id="about" className="content-section">
+            <div className="content-card">
+              <h2>About Me</h2>
+              <div className="about-content">
+
+              </div>
+            </div>
+          </section>
+
+          {/* Skills Section */}
+          <section id="skills" className="content-section">
+            <div className="content-card">
+              <h2>Skills</h2>
+              <div className="skills-grid">
+                
+              </div>
+            </div>
+          </section>
+
+          {/* Projects Section */}
+          <section id="projects" className="content-section">
+            <div className="content-card">
+              <h2>Projects</h2>
+              
+            </div>
+          </section>
+
+          {/* Experiences Section */}
+          <section id="experiences" className="content-section">
+            <div className="content-card">
+              <h2>Experiences</h2>
+                
+            </div>
+          </section>
+
+        </div>
+      </main>
+    </div>
   )
 }
 

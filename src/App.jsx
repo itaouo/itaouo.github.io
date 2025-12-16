@@ -20,7 +20,9 @@ function App() {
             <div className="content-card">
               <h2>About Me</h2>
               <div className="about-content">
-
+                <div className="about-text">
+                  <p>A <strong>motivated software engineer</strong> who enjoys mastering new technologies and choosing the <strong>most suitable approach</strong> for each project. Committed to solving everyday challenges through <strong>collaboration and innovation</strong>, delivering practical, maintainable solutions that drive team success.</p>
+                </div>
               </div>
             </div>
           </section>

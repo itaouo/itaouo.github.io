@@ -82,10 +82,7 @@
 
 /* About Section */
 .about-content {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 40px;
-  align-items: start;
+  display: block;
 }
 
 .about-text p {
@@ -93,6 +90,15 @@
   line-height: 1.8;
   margin: 0 0 20px 0;
   font-size: 16px;
+  text-indent: 2em;
+}
+
+.about-text strong {
+  background-color: #f4e4bc;
+  color: #2c3e50;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 700;
 }
 
 .about-stats {
@@ -452,8 +458,42 @@
   }
 
   .content-card h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  /* 手機板文字縮小 */
+  .about-text p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .stat-number {
+    font-size: 28px;
+  }
+
+  .stat-label {
+    font-size: 12px;
+  }
+
+  .skill-tag {
+    font-size: 13px;
+  }
+
+  .project-card p {
+    font-size: 14px;
+  }
+
+  .experience-header h3 {
+    font-size: 18px;
+  }
+
+  .experience-company {
+    font-size: 14px;
+  }
+
+  .experience-item li {
+    font-size: 14px;
   }
 
   .about-content {

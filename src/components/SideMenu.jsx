@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaUser, FaTools, FaRocket, FaBriefcase, FaGraduationCap, FaGithub, FaEnvelope, FaBars } from 'react-icons/fa';
-const GITHUB_URL = import.meta.env.VITE_GITHUB_URL
-const EMAIL = import.meta.env.VITE_EMAIL
+import { GITHUB_URL, EMAIL } from '../data/social-links';
 import avatarImg from '../assets/avatar.png';
 import './SideMenu.css';
 

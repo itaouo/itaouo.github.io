@@ -71,13 +71,60 @@
   margin-bottom: 30px;
 }
 
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  border-bottom: 3px solid #f4e4bc;
+  padding-bottom: 15px;
+}
+
 .content-card h2 {
   color: #2c3e50;
   font-size: 32px;
   font-weight: 700;
-  margin: 0 0 30px 0;
-  border-bottom: 3px solid #f4e4bc;
-  padding-bottom: 15px;
+  margin: 0;
+}
+
+.more-btn {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  transform: translateX(0);
+  outline: none;
+}
+
+.more-btn:hover {
+  opacity: 0.7;
+  transform: translateX(8px);
+}
+
+.more-btn.expanded:hover {
+  opacity: 0.7;
+  transform: translateX(-8px);
+}
+
+.more-btn:focus {
+  outline: none;
+}
+
+.more-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #2c3e50;
+  margin-right: 5px;
+}
+
+.more-arrow {
+  font-size: 18px;
+  color: #2c3e50;
+  line-height: 1;
 }
 
 /* About Section */
@@ -149,13 +196,47 @@
 }
 
 .skill-tag {
-  background: #f4e4bc;
   color: #2c3e50;
   padding: 8px 16px;
   border-radius: 20px;
   font-size: 14px;
   font-weight: 500;
   border: 1px solid rgba(44, 62, 80, 0.1);
+  transition: all 0.2s ease;
+}
+
+.skill-tag.novice {
+  background: #FFFFFF;
+  border-color: rgba(44, 62, 80, 0.1);
+}
+
+.skill-tag.familiar {
+  background: #FAF2DE;
+  border-color: rgba(44, 62, 80, 0.12);
+}
+
+.skill-tag.proficient {
+  background: #F4E4BC;
+  border-color: rgba(44, 62, 80, 0.15);
+}
+
+.skill-tag.advanced {
+  background: #EFDAA4;
+  border-color: rgba(44, 62, 80, 0.18);
+}
+
+.skill-tag.expert {
+  background: #EACF8B;
+  border-color: rgba(44, 62, 80, 0.2);
+}
+
+.skills-legend {
+  margin-top: 10px;
+  border-top: 1px solid #e9ecef;
+  color: #7f8c8d;
+  font-size: 10px;
+  line-height: 1.6;
+  text-align: right;
 }
 
 /* Projects Section */
